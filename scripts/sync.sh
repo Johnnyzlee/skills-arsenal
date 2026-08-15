@@ -14,6 +14,14 @@
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# 安全防护:REPO_DIR 必须指向本仓库(存在 AGENTS.md),否则退出。
+# 防止脚本被 source 或在错误目录下调用时把整个文件系统当 skill 源扫描。
+if [[ ! -f "$REPO_DIR/AGENTS.md" || ! -d "$REPO_DIR/scripts" ]]; then
+  echo "[error] 无法确认仓库根目录 ($REPO_DIR),请通过 ./scripts/sync.sh 方式运行" >&2
+  exit 1
+fi
+
 DRY_RUN=0
 [[ "${1:-}" == "--dry-run" ]] && DRY_RUN=1
 
@@ -42,26 +50,22 @@ tool_installed() {
     "$HOME/.config/zed/skills")      command -v zed >/dev/null 2>&1 || [[ -d "/Applications/Zed.app" ]] || [[ -d "$HOME/.config/zed" ]] ;;
     "$HOME/.hermes/skills")          command -v hermes >/dev/null 2>&1 || [[ -d "$HOME/.hermes" ]] ;;
     "$HOME/.cursor/skills")          command -v cursor >/dev/null 2>&1 || [[ -d "/Applications/Cursor.app" ]] || [[ -d "$HOME/.cursor" ]] ;;
-    # ~/.agents/skills 是 Zed 的全局技能目录(见 https://zed.dev/docs/ai/skills#where-skills-live),
-    # 与 ~/.config/zed/skills 并存,Zed 同时读取两者。
+    # ~/.agents/skills 是跨 agent 通用技能目录:Zed 的全局技能目录
+    # (https://zed.dev/docs/ai/skills#where-skills-live),同时 opencode 也读取
+    # (https://opencode.ai/docs/skills/)。与 ~/.config/zed/skills 并存。
     "$HOME/.agents/skills")          [[ -d "$HOME/.agents" ]] || [[ -d "/Applications/Zed.app" ]] || command -v zed >/dev/null 2>&1 ;;
     *)                               return 1 ;;
   esac
 }
 
 collect_skills() {
-  local category_dir skill_dir name
-  for category_dir in "$REPO_DIR"/*/; do
-    local category
-    category="$(basename "$category_dir")"
-    [[ "$category" == "scripts" ]] && continue
-    for skill_dir in "$category_dir"*/; do
-      [[ -d "$skill_dir" ]] || continue
-      [[ -f "$skill_dir/SKILL.md" ]] || continue
-      name="$(basename "$skill_dir")"
-      printf '%s %s\n' "$name" "$skill_dir"
-    done
-  done
+  # 递归查找仓库内所有 SKILL.md(支持任意层级:分类/子分类/skill),排除 scripts/。
+  local skill_file
+  while IFS= read -r -d '' skill_file; do
+    local name
+    name="$(basename "$(dirname "$skill_file")")"
+    printf '%s %s\n' "$name" "$(dirname "$skill_file")/"
+  done < <(find "$REPO_DIR" -name SKILL.md -not -path "*/scripts/*" -print0)
 }
 
 total_created=0
