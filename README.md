@@ -59,15 +59,62 @@
 
 ## Skill 一览
 
-| 一级目录 | 二级目录 | Skill | 用途 | 原始仓库 |
-|---|---|---|---|---|
-| standards | — | [skill-authoring-standard](standards/skill-authoring-standard/SKILL.md) | 编写/维护高质量 skill 的规范:触发词、结构、写作纪律 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏) |
-| coding | — | [prose-standard](coding/prose-standard/SKILL.md) | 注释/JSDoc/文档写作标准:保留完整命题、按位置分类的必需覆盖 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏自 `dsh-prose-standard`) |
-| coding | — | [trim-cot-leakage](coding/trim-cot-leakage/SKILL.md) | 清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏自 `dsh-trim-cot-leakage`) |
-| research | web-search | [agent-reach](research/web-search/agent-reach/SKILL.md) | 全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等) | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) |
-| research | web-search | [zhihu](research/web-search/zhihu/SKILL.md) | 知乎搜索/热榜/直答/创作管理 | 知乎官方分发,无公开仓库 |
-| research | literature-management | [zotero](research/literature-management/zotero/SKILL.md) | Zotero 文献库管理:检索/元数据/全文/注释/引用 | 依赖 [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp)(v0.9.1);SKILL.md 为安装时生成的本地文件,无独立上游仓库 |
-| research | scientific-figures | [academic-figures-drawer](research/scientific-figures/academic-figures-drawer/SKILL.md) | 科研绘图:论文配图、框架图、流程图(draw.io) | [M1n-n9/academic-figures-drawer](https://github.com/M1n-n9/academic-figures-drawer) |
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">分类</th>
+      <th>Skill</th>
+      <th>用途</th>
+      <th>原始仓库</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="1">standards</td>
+      <td>—</td>
+      <td><a href="standards/skill-authoring-standard/SKILL.md">skill-authoring-standard</a></td>
+      <td>编写/维护高质量 skill 的规范:触发词、结构、写作纪律</td>
+      <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏)</td>
+    </tr>
+    <tr>
+      <td rowspan="2">coding</td>
+      <td>—</td>
+      <td><a href="coding/prose-standard/SKILL.md">prose-standard</a></td>
+      <td>注释/JSDoc/文档写作标准:保留完整命题、按位置分类的必需覆盖</td>
+      <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-prose-standard</code>)</td>
+    </tr>
+    <tr>
+      <td>—</td>
+      <td><a href="coding/trim-cot-leakage/SKILL.md">trim-cot-leakage</a></td>
+      <td>清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类</td>
+      <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-trim-cot-leakage</code>)</td>
+    </tr>
+    <tr>
+      <td rowspan="4">research</td>
+      <td rowspan="2">web-search</td>
+      <td><a href="research/web-search/agent-reach/SKILL.md">agent-reach</a></td>
+      <td>全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等)</td>
+      <td><a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a></td>
+    </tr>
+    <tr>
+      <td><a href="research/web-search/zhihu/SKILL.md">zhihu</a></td>
+      <td>知乎搜索/热榜/直答/创作管理</td>
+      <td>知乎官方分发,无公开仓库</td>
+    </tr>
+    <tr>
+      <td>literature-management</td>
+      <td><a href="research/literature-management/zotero/SKILL.md">zotero</a></td>
+      <td>Zotero 文献库管理:检索/元数据/全文/注释/引用</td>
+      <td>依赖 <a href="https://github.com/54yyyu/zotero-mcp">54yyyu/zotero-mcp</a>(v0.9.1);SKILL.md 为安装时生成的本地文件,无独立上游仓库</td>
+    </tr>
+    <tr>
+      <td>scientific-figures</td>
+      <td><a href="research/scientific-figures/academic-figures-drawer/SKILL.md">academic-figures-drawer</a></td>
+      <td>科研绘图:论文配图、框架图、流程图(draw.io)</td>
+      <td><a href="https://github.com/M1n-n9/academic-figures-drawer">M1n-n9/academic-figures-drawer</a></td>
+    </tr>
+  </tbody>
+</table>
 
 > **更新检查**:有原始仓库的 skill,升级前先看原仓库是否发布了新版本;蒸馏/本地化的 skill 在原作者有重大更新时,决定是否重新吸收(流程见 AGENTS.md)。
 
