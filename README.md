@@ -30,7 +30,9 @@
   │                                                                         │
   │  skills-arsenal/                                                        │
   │  ├── standards/                         ← 元规范(怎么造 skill)          │
-  │  │   └── skill-authoring-standard/      ← 编写/维护 skill 的规范        │
+  │  │   ├── skill-authoring-standard/      ← 编写/维护 skill 的规范        │
+  │  │   ├── readme-writing/                ← README 写作(准备中,已收资源)  │
+  │  │   └── agents-md-writing/             ← AGENTS.md 写作(准备中,已收资源)│
   │  │                                                                      │
   │  ├── coding/                            ← 编程开发                      │
   │  │   ├── prose-standard/                ← 注释/文档写作标准             │
@@ -76,6 +78,18 @@
       <td><a href="standards/skill-authoring-standard/SKILL.md">skill-authoring-standard</a></td>
       <td>编写/维护高质量 skill 的规范:触发词、结构、写作纪律</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏)</td>
+    </tr>
+    <tr>
+      <td>—</td>
+      <td><a href="standards/readme-writing/SKILL.md">readme-writing</a></td>
+      <td>README 写作规范(准备中,已收资源)</td>
+      <td>—(资源见 <a href="standards/readme-writing/resources/README.md">resources</a>)</td>
+    </tr>
+    <tr>
+      <td>—</td>
+      <td><a href="standards/agents-md-writing/SKILL.md">agents-md-writing</a></td>
+      <td>AGENTS.md 写作规范(准备中,已收资源)</td>
+      <td>—(资源见 <a href="standards/agents-md-writing/resources/README.md">resources</a>)</td>
     </tr>
     <tr>
       <td rowspan="2">coding</td>
