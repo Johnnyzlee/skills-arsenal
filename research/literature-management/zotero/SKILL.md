@@ -35,3 +35,7 @@ Use the already configured `zotero` MCP server. Do not ask the user to install a
 ---
 
 *来源:无独立公开仓库;依赖已配置的 zotero-mcp-server 工作。*
+
+---
+
+*来源:依赖 zotero-mcp-server v0.9.1(`https://github.com/54yyyu/zotero-mcp`),本 SKILL.md 为安装 MCP 时生成的本地文件,无独立上游仓库。升级前先检查 zotero-mcp 是否更新了工具集。*

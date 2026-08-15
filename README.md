@@ -66,7 +66,7 @@
 | coding | — | [trim-cot-leakage](coding/trim-cot-leakage/SKILL.md) | 清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏自 `dsh-trim-cot-leakage`) |
 | research | web-search | [agent-reach](research/web-search/agent-reach/SKILL.md) | 全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等) | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) |
 | research | web-search | [zhihu](research/web-search/zhihu/SKILL.md) | 知乎搜索/热榜/直答/创作管理 | 知乎官方分发,无公开仓库 |
-| research | literature-management | [zotero](research/literature-management/zotero/SKILL.md) | Zotero 文献库管理:检索/元数据/全文/注释/引用 | 无独立仓库(依赖 zotero-mcp-server) |
+| research | literature-management | [zotero](research/literature-management/zotero/SKILL.md) | Zotero 文献库管理:检索/元数据/全文/注释/引用 | 依赖 [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp)(v0.9.1);SKILL.md 为安装时生成的本地文件,无独立上游仓库 |
 | research | scientific-figures | [academic-figures-drawer](research/scientific-figures/academic-figures-drawer/SKILL.md) | 科研绘图:论文配图、框架图、流程图(draw.io) | [M1n-n9/academic-figures-drawer](https://github.com/M1n-n9/academic-figures-drawer) |
 
 > **更新检查**:有原始仓库的 skill,升级前先看原仓库是否发布了新版本;蒸馏/本地化的 skill 在原作者有重大更新时,决定是否重新吸收(流程见 AGENTS.md)。
