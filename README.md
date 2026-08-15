@@ -34,21 +34,25 @@ skills-arsenal/
 
 | Skill | 用途 | 来源 |
 |---|---|---|
-| *(agent-reach / zhihu / zotero 已在其他目录维护,见下方"外部已登记 skill")* | | |
+| agent-reach | 全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等),零配置 6 渠道 | 个人 skill,自 `~/.agents` 集中而来 |
+| zhihu | 知乎搜索/热榜/直答/创作管理 | 个人 skill v0.3.0,自 `~/.codex` 集中而来 |
+| zotero | Zotero 文献库管理:检索/元数据/全文/注释/引用 | 个人 skill,自 `~/.agents` 集中而来 |
 
 ### writing/ · life/ — 待扩充
 
 空分类,未来放入写作、生活类 skill。
 
-## 外部已登记 skill
+## 外部已登记 skill(第三方,不入仓库)
 
-以下 skill 真实家在其他目录(通常是软链进 `~/.config/opencode/skills/`),本仓库不托管、不覆盖,仅登记索引:
+以下 skill 来自第三方渠道,保持原位由原渠道更新,本仓库只登记索引、不托管、不覆盖:
 
-| Skill | 真实位置 |
-|---|---|
-| agent-reach | `~/.agents/skills/agent-reach` |
-| zhihu | `~/.codex/skills/zhihu` |
-| zotero | `~/.agents/skills/zotero` |
+| Skill | 来源渠道 | 数量 | 说明 |
+|---|---|---|---|
+| copilot-*、github-*、codeql、dependabot、gitmoji 等 | `github/awesome-copilot`(GitHub 官方 Copilot skill 合集) | 29 | 装在 opencode 目录 |
+| academic-figures-drawer | `M1n-n9/academic-figures-drawer`(独立开发者) | 1 | git 克隆,opencode 目录 |
+| pr-screenshots | 未知 | 1 | 空目录占位 |
+| firefox-tab-manager | Firefox 插件 "Agent Bridge" 配套 | 2 | codex 与 hermes 各一份独立副本,内容不同,各归各工具 |
+| Hermes 内置 skill(apple、github、research、security 等) | Hermes skills hub | 26 | 由 Hermes 自己管理,未搬动 |
 
 ## 使用方式
 
