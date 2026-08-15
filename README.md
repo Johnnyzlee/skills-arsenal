@@ -72,26 +72,12 @@
   </thead>
   <tbody>
     <tr>
-      <td rowspan="3">standards</td>
+      <td rowspan="1">standards</td>
       <td>—</td>
       <td><a href="standards/skill-authoring-standard/SKILL.md">skill-authoring-standard</a></td>
       <td>编写/维护高质量 skill 的规范:触发词、结构、写作纪律</td>
       <td>—</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏)</td>
-    </tr>
-    <tr>
-      <td>—</td>
-      <td>readme-writing(准备中)</td>
-      <td>README 写作规范</td>
-      <td>—</td>
-      <td><a href="https://github.com/othneildrew/Best-README-Template">Best-README-Template</a>(16k⭐,社区首选模板) · <a href="https://github.com/matiassingers/awesome-readme">awesome-readme</a>(21k⭐,优秀范例集) · <a href="https://github.com/race2infinity/The-Documentation-Compendium">The-Documentation-Compendium</a>(6k⭐,文档写作指南) · <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">GitHub 官方:About READMEs</a></td>
-    </tr>
-    <tr>
-      <td>—</td>
-      <td>agents-md-writing(准备中)</td>
-      <td>AGENTS.md 写作规范</td>
-      <td>—</td>
-      <td><a href="https://github.com/agentsmd/agents.md">agentsmd/agents.md</a>(23.6k⭐,官方规范) · <a href="https://github.com/microsoft/skills">microsoft/skills</a>(2.9k⭐,微软官方) · <a href="https://github.com/ciembor/agent-rules-books">agent-rules-books</a>(2.5k⭐,经典书转规则) · <a href="https://github.com/wasp-lang/open-saas">open-saas</a>(15k⭐,生产级范例)</td>
     </tr>
     <tr>
       <td rowspan="2">coding</td>
