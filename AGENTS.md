@@ -137,6 +137,19 @@ description: >
 - 支持 `--dry-run`、`SKILLS_TARGET_DIR` 单工具同步;幂等。
 - **安全防护**:脚本必须验证 `REPO_DIR` 含 `AGENTS.md`,否则拒绝执行(防止误扫文件系统)。
 
+### 上线/草稿在同步时的区别(强制)
+
+sync.sh 对 `published` 两种状态的处理**完全不同**,修改脚本时必须保持:
+
+| | `published: true`(已上线) | `published: false`(草稿) |
+|---|---|---|
+| **软链** | 正常建立(`[link]` / `[update]` 日志) | **绝不建立**;跳过该 skill |
+| **已有软链** | 指向仓库则保持;指向他处则更新 | **自动移除**(`[unpublish]` 日志)——下线立即生效 |
+| **各 Agent 表现** | 可见、可触发 | 不可见、不触发 |
+| **统计** | 计入 linked/updated、already-ok | 计入 unpublished-removed |
+
+判定方式:读取 SKILL.md frontmatter 中的 `published: true`;字段缺失或非 `true` 一律视为草稿。**新增 skill 默认草稿,必须显式写 `published: true` 才会上线。**
+
 ## 多电脑工作流
 
 - GitHub 是唯一事实源;新电脑:`curl -fsSL https://raw.githubusercontent.com/Johnnyzlee/skills-arsenal/main/scripts/setup.sh | bash`

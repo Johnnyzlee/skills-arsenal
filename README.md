@@ -206,5 +206,6 @@ cd ~/skills-arsenal && git pull --ff-only && ./scripts/sync.sh
 要点速览:
 
 - 只改仓库内真身,不直接动任何 Agent 的软链
-- 修改内容即时生效;只有新增/移动/删除 skill 才需要重跑 `sync.sh`
+- 修改内容即时生效;只有新增/移动/删除 skill 或**改变上线状态**才需要重跑 `sync.sh`
+- 每个 skill 有 `published` 上线开关:`true` 同步进全部 Agent,`false`(草稿)不进入任何 Agent、已有软链自动移除
 - 提交规范:`feat:` 新增 / `fix:` 修正 / `docs:` 文档 / `chore:` 脚本结构
