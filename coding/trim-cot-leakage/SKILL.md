@@ -1,4 +1,5 @@
 ---
+published: false
 name: trim-cot-leakage
 description: >
   MUST USE when 清理/审查/修复 any 注释 (comment), JSDoc, 文档, Agent 记录, 笔记

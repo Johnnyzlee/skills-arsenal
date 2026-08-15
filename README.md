@@ -66,6 +66,7 @@
       <th colspan="2">分类</th>
       <th>Skill</th>
       <th>用途</th>
+      <th>状态</th>
       <th>原始仓库</th>
       <th>参考资源</th>
     </tr>
@@ -76,6 +77,7 @@
       <td>—</td>
       <td><a href="standards/skill-authoring-standard/SKILL.md">skill-authoring-standard</a></td>
       <td>编写/维护高质量 skill 的规范:触发词、结构、写作纪律</td>
+      <td>草稿</td>
       <td>—</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏)</td>
     </tr>
@@ -84,6 +86,7 @@
       <td>—</td>
       <td><a href="coding/prose-standard/SKILL.md">prose-standard</a></td>
       <td>注释/JSDoc/文档写作标准:保留完整命题、按位置分类的必需覆盖</td>
+      <td>草稿</td>
       <td>—</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-prose-standard</code>)</td>
     </tr>
@@ -91,6 +94,7 @@
       <td>—</td>
       <td><a href="coding/trim-cot-leakage/SKILL.md">trim-cot-leakage</a></td>
       <td>清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类</td>
+      <td>草稿</td>
       <td>—</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-trim-cot-leakage</code>)</td>
     </tr>
@@ -98,6 +102,7 @@
       <td>—</td>
       <td><a href="coding/code-review/SKILL.md">code-review</a></td>
       <td>代码评审规范:阻塞性要求 + 人工检查清单(生命周期/并发/接口契约/边界覆盖等)</td>
+      <td>草稿</td>
       <td>—</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-code-review</code>)</td>
     </tr>
@@ -105,6 +110,7 @@
       <td>—</td>
       <td><a href="coding/pre-push-checks/SKILL.md">pre-push-checks</a></td>
       <td>推送前最小检查:按改动类型选最小相关测试,不反射式跑全量</td>
+      <td>草稿</td>
       <td>—</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-pre-push-checks</code>)</td>
     </tr>
@@ -112,6 +118,7 @@
       <td>—</td>
       <td><a href="coding/find-simplifications/SKILL.md">find-simplifications</a></td>
       <td>代码简化审计:有证据的删除/折叠提案,消费者分类,驳回弱候选</td>
+      <td>草稿</td>
       <td>—</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-find-simplifications</code>)</td>
     </tr>
@@ -120,6 +127,7 @@
       <td>—</td>
       <td><a href="web-search/agent-reach/SKILL.md">agent-reach</a></td>
       <td>全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等)</td>
+      <td>已上线</td>
       <td><a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a></td>
       <td>—</td>
     </tr>
@@ -127,14 +135,16 @@
       <td>—</td>
       <td><a href="web-search/zhihu/SKILL.md">zhihu</a></td>
       <td>知乎搜索/热榜/直答/创作管理</td>
+      <td>已上线</td>
       <td>—</td>
       <td>知乎官方分发(<a href="https://developer-cdn.zhihu.com/zhihu-cli/releases/stable/manifest.json">manifest</a>)</td>
     </tr>
     <tr>
-      <td rowspan="3">research</td>
+      <td rowspan="2">research</td>
       <td>literature-management</td>
       <td><a href="research/literature-management/zotero/SKILL.md">zotero</a></td>
       <td>Zotero 文献库管理:检索/元数据/全文/注释/引用</td>
+      <td>已上线</td>
       <td>—</td>
       <td><a href="https://github.com/54yyyu/zotero-mcp">54yyyu/zotero-mcp</a>(v0.9.1)</td>
     </tr>
@@ -142,14 +152,8 @@
       <td>scientific-figures</td>
       <td><a href="research/scientific-figures/academic-figures-drawer/SKILL.md">academic-figures-drawer</a></td>
       <td>科研绘图:论文配图、框架图、流程图(draw.io)</td>
+      <td>已上线</td>
       <td><a href="https://github.com/M1n-n9/academic-figures-drawer">M1n-n9/academic-figures-drawer</a></td>
-      <td>—</td>
-    </tr>
-    <tr>
-      <td>academic-writing</td>
-      <td>academic-writing(准备中)</td>
-      <td>学术写作规范</td>
-      <td>—</td>
       <td>—</td>
     </tr>
   </tbody>

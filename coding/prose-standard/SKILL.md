@@ -1,4 +1,5 @@
 ---
+published: false
 name: prose-standard
 description: >
   MUST USE when 写/改/审/精简/恢复 any 注释 (comment), JSDoc, 文档 (doc),

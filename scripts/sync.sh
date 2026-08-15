@@ -60,18 +60,29 @@ tool_installed() {
 
 collect_skills() {
   # 递归查找仓库内所有 SKILL.md(支持任意层级:分类/子分类/skill),排除 scripts/。
+  # 读取 frontmatter 中的 published 标记(默认未上线)。
   local skill_file
   while IFS= read -r -d '' skill_file; do
-    local name
+    local name published
     name="$(basename "$(dirname "$skill_file")")"
-    printf '%s %s\n' "$name" "$(dirname "$skill_file")/"
+    published="false"
+    # 提取 frontmatter 中的 published: true/false
+    if awk 'BEGIN{f=0} /^---$/{f++; next} f==1 && /^published:[[:space:]]*true([[:space:]]|$)/{print "true"; exit} f>1{exit}' "$skill_file" | grep -q true; then
+      published="true"
+    fi
+    printf '%s %s %s\n' "$name" "$(dirname "$skill_file")/" "$published"
   done < <(find "$REPO_DIR" -name SKILL.md -not -path "*/scripts/*" -print0)
+}
+
+is_published() {
+  [[ "$3" == "true" ]]
 }
 
 total_created=0
 total_skipped=0
 total_warned=0
 total_missing=0
+total_unpublished=0
 
 for TARGET_DIR in "${TARGET_DIRS[@]}"; do
   if [[ -z "${SKILLS_TARGET_DIR:-}" ]] && ! tool_installed "$TARGET_DIR"; then
@@ -85,9 +96,23 @@ for TARGET_DIR in "${TARGET_DIRS[@]}"; do
   created=0
   skipped=0
   warned=0
+  unpublished=0
 
-  while read -r name skill_dir; do
+  while read -r name skill_dir published; do
     link="$TARGET_DIR/$name"
+
+    # 未上线的 skill:不建软链;若目标已有指向仓库的软链,移除(下线)。
+    if ! is_published "$name" "$skill_dir" "$published"; then
+      if [[ -L "$link" ]]; then
+        current="$(readlink "$link")"
+        if [[ "$current" == "$skill_dir" ]]; then
+          echo "[unpublish] $name: 未上线,移除软链"
+          [[ $DRY_RUN -eq 0 ]] && rm "$link"
+          unpublished=$((unpublished + 1))
+        fi
+      fi
+      continue
+    fi
 
     if [[ -L "$link" ]]; then
       current="$(readlink "$link")"
@@ -108,13 +133,14 @@ for TARGET_DIR in "${TARGET_DIRS[@]}"; do
     fi
   done < <(collect_skills)
 
-  echo "linked/updated: $created, already-ok: $skipped, skipped-warnings: $warned"
+  echo "linked/updated: $created, already-ok: $skipped, skipped-warnings: $warned, unpublished-removed: $unpublished"
   echo
   total_created=$((total_created + created))
   total_skipped=$((total_skipped + skipped))
   total_warned=$((total_warned + warned))
+  total_unpublished=$((total_unpublished + unpublished))
 done
 
 echo "===== 汇总 ====="
-echo "新建/更新: $total_created, 已就位: $total_skipped, 跳过(冲突): $total_warned, 未检测到工具: $total_missing"
+echo "新建/更新: $total_created, 已就位: $total_skipped, 跳过(冲突): $total_warned, 未检测到工具: $total_missing, 未上线已移除: $total_unpublished"
 [[ $DRY_RUN -eq 1 ]] && echo "(dry-run,未做任何修改)"

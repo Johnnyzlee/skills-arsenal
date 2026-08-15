@@ -1,4 +1,5 @@
 ---
+published: false
 name: code-review
 description: >
   MUST USE when 审查/评审 a pull request (PR) 或代码改动 — review my PR,

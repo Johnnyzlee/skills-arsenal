@@ -1,4 +1,5 @@
 ---
+published: false
 name: find-simplifications
 description: >
   MUST USE when 找代码里可以简化/删除的东西 — find simplifications, 简化这个,

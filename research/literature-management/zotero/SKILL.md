@@ -1,4 +1,5 @@
 ---
+published: true
 name: zotero
 description: Use the configured Zotero MCP server to search the user's Zotero library, inspect collections and items, read metadata and full text, work with PDFs, export citations, and create or update Zotero notes when explicitly requested. Use whenever the user mentions Zotero, references, citations, BibTeX, RIS, a Zotero collection, a Zotero item, or asks to read papers stored in Zotero.
 ---

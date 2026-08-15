@@ -54,10 +54,21 @@ skills-arsenal/
 ```yaml
 ---
 name: <全小写连字符,必须与目录名一致>
+published: true|false
 description: >
   触发描述:中英双语,以触发场景开头,MUST USE 表明何时必用,NOT for 划清边界。
 ---
 ```
+
+### 上线状态(强制)
+
+每个 skill 通过 `published` 字段控制是否进入各 Agent:
+
+- **`published: false`(草稿/未上线)**:sync.sh 不为其建立软链;若目标目录已有指向仓库的旧软链,自动移除。内容仍在仓库(有 git 历史),但任何 Agent 都看不到、不会触发。
+- **`published: true`(已上线)**:sync.sh 正常建立软链,各 Agent 可用。
+- **新增 skill 默认 `published: false`**:先本地打磨、评审、真实使用验证,确认成熟后再翻成 `true` 并重跑 sync。
+- **改上线状态**:修改 SKILL.md 的 `published` 字段 → 跑 `./scripts/sync.sh` → 提交推送(状态变更随代码一起进 git)。
+- sync.sh 的 `--dry-run` 会预览"将上线/将下线"的变更;SKILLS_TARGET_DIR 单工具同步同样遵守该字段。
 
 ### 来源记录(强制)
 

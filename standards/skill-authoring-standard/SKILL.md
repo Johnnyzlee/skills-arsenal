@@ -1,4 +1,5 @@
 ---
+published: false
 name: skill-authoring-standard
 description: >
   MUST USE when the user asks to 写/新建/创建/添加/修改/优化/审查/重构 a skill,

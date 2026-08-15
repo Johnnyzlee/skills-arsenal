@@ -1,4 +1,5 @@
 ---
+published: true
 name: academic-figures-drawer
 description: "Create camera-ready, editable draw.io figures from papers, method descriptions, code, or reference images. Use for ICML, NeurIPS/NIPS, ICLR, and similar ML/AI research figures: concise framework overviews, module-detail diagrams, tensor and attention flows, ablations, training/inference pipelines, and downstream-task panels. Optionally use image generation for a non-semantic visual concept or input/context asset, then translate the approved semantics into vector draw.io XML with preview, static validation, and screenshot-driven refinement."
 ---

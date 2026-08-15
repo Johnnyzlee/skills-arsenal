@@ -1,4 +1,5 @@
 ---
+published: false
 name: pre-push-checks
 description: >
   MUST USE when 推送/提交前 deciding which checks to run — push 之前跑什么检查,

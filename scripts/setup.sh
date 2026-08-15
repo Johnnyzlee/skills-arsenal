@@ -28,7 +28,11 @@ echo "==> 3/3 建立软链(自动检测本机已安装的 Agent)"
 
 echo
 echo "完成!已同步到:"
-ls -l "$INSTALL_DIR"/*/*/SKILL.md 2>/dev/null | awk -F/ '{print "  - " $(NF-1)}'
+for f in "$INSTALL_DIR"/*/*/SKILL.md; do
+  if awk 'BEGIN{f=0} /^---$/{f++; next} f==1 && /^published:[[:space:]]*true([[:space:]]|$)/{print "true"; exit} f>1{exit}' "$f" | grep -q true; then
+    echo "  - $(basename "$(dirname "$f")")"
+  fi
+done
 echo
 echo "本机可用的 Agent 目录:" 
 echo "  opencode ~/.config/opencode/skills   Claude ~/.claude/skills"
