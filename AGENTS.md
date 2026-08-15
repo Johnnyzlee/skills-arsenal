@@ -32,9 +32,7 @@ skills-arsenal/
 │   │   └── academic-figures-drawer/
 │   └── academic-writing/            #   学术写作(规划中)
 ├── standards/                       # 元规范
-│   ├── skill-authoring-standard/    #   如何写 skill
-│   ├── readme-writing/              #   README 写作(准备中,资源已收)
-│   └── agents-md-writing/           #   AGENTS.md 写作(准备中,资源已收)
+│   └── skill-authoring-standard/    #   如何写 skill
 ├── scripts/
 │   ├── sync.sh                      #   软链同步
 │   └── setup.sh                     #   新电脑一键安装
