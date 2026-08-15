@@ -25,27 +25,33 @@
   /opencode  /skills    /skills    /zed     /skills   /skills  /skills    即自动同步
   /skills                           /skills
 
+  ⚠️ 只有 published: true 的 skill 才会被 sync.sh 建软链;
+     草稿(published: false)不进入任何 Agent,已有软链自动移除。
+
   ┌─────────────────────────────────────────────────────────────────────────┐
-  │  仓库目录结构                                                            │
+  │  仓库目录结构(✓=已上线 · ○=草稿)                                          │
   │                                                                         │
   │  skills-arsenal/                                                        │
   │  ├── standards/                         ← 元规范(怎么造 skill)          │
-  │  │   └── skill-authoring-standard/      ← 编写/维护 skill 的规范        │
+  │  │   └── skill-authoring-standard/ ○    ← 编写/维护 skill 的规范        │
   │  │                                                                      │
   │  ├── coding/                            ← 编程开发                      │
-  │  │   ├── prose-standard/                ← 注释/文档写作标准             │
-  │  │   └── trim-cot-leakage/              ← 思维链残留清理                │
+  │  │   ├── prose-standard/ ○              ← 注释/文档写作标准             │
+  │  │   ├── trim-cot-leakage/ ○            ← 思维链残留清理                │
+  │  │   ├── code-review/ ○                 ← 代码评审规范                  │
+  │  │   ├── pre-push-checks/ ○             ← 推送前最小检查                │
+  │  │   └── find-simplifications/ ○        ← 代码简化审计                  │
   │  │                                                                      │
   │  ├── web-search/                        ← 网络检索                      │
-  │  │   ├── agent-reach/                   ← 全网调研(13 平台)             │
-  │  │   └── zhihu/                         ← 知乎搜索/热榜/直答            │
+  │  │   ├── agent-reach/ ✓                 ← 全网调研(13 平台)             │
+  │  │   └── zhihu/ ✓                       ← 知乎搜索/热榜/直答            │
   │  │                                                                      │
   │  ├── research/                          ← 学术研究                      │
   │  │   ├── literature-management/                                         │
-  │  │   │   └── zotero/                    ← Zotero 文献管理               │
+  │  │   │   └── zotero/ ✓                  ← Zotero 文献管理               │
   │  │   ├── scientific-figures/                                            │
-  │  │   │   └── academic-figures-drawer/   ← 科研绘图(draw.io)             │
-  │  │   └── academic-writing/              ← 学术写作(准备中)               │
+  │  │   │   └── academic-figures-drawer/ ✓ ← 科研绘图(draw.io)             │
+  │  │   └── academic-writing/              ← 学术写作(待扩充,空分类)       │
   │  │                                                                      │
   │  ├── writing/ · life/                   ← 待扩充分类                    │
   │  ├── scripts/                                                           │
@@ -55,7 +61,7 @@
   │  └── AGENTS.md                          ← 维护手册(给 Agent 看)         │
   └─────────────────────────────────────────────────────────────────────────┘
 
-  共 7 个 skill,全部软链到 7 个 Agent(检测到已安装的才同步)
+  共 10 个 skill:4 个已上线(✓)进入全部 Agent,6 个草稿(○)仅存仓库,成熟后翻 published 开关上线。
 ```
 
 ## Skill 一览
