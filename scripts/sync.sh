@@ -42,7 +42,9 @@ tool_installed() {
     "$HOME/.config/zed/skills")      command -v zed >/dev/null 2>&1 || [[ -d "/Applications/Zed.app" ]] || [[ -d "$HOME/.config/zed" ]] ;;
     "$HOME/.hermes/skills")          command -v hermes >/dev/null 2>&1 || [[ -d "$HOME/.hermes" ]] ;;
     "$HOME/.cursor/skills")          command -v cursor >/dev/null 2>&1 || [[ -d "/Applications/Cursor.app" ]] || [[ -d "$HOME/.cursor" ]] ;;
-    "$HOME/.agents/skills")          [[ -d "$HOME/.agents" ]] ;;
+    # ~/.agents/skills 是 Zed 的全局技能目录(见 https://zed.dev/docs/ai/skills#where-skills-live),
+    # 与 ~/.config/zed/skills 并存,Zed 同时读取两者。
+    "$HOME/.agents/skills")          [[ -d "$HOME/.agents" ]] || [[ -d "/Applications/Zed.app" ]] || command -v zed >/dev/null 2>&1 ;;
     *)                               return 1 ;;
   esac
 }
