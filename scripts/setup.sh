@@ -23,7 +23,7 @@ fi
 echo "==> 2/3 检查依赖"
 command -v git >/dev/null || { echo "缺少 git"; exit 1; }
 
-echo "==> 3/3 建立软链(所有 Agent)"
+echo "==> 3/3 建立软链(自动检测本机已安装的 Agent)"
 "$INSTALL_DIR/scripts/sync.sh"
 
 echo

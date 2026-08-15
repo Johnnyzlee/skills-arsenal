@@ -1,22 +1,16 @@
 #!/usr/bin/env bash
-# sync.sh — 把仓库内的 skill 软链到所有支持的工具目录
+# sync.sh — 把仓库内的 skill 软链到所有检测到的工具目录
 #
-# 支持的目标工具(opencode / Claude Code / Codex / Zed / Hermes / Cursor / 通用 ~/.agents):
-#   ~/.config/opencode/skills
-#   ~/.claude/skills
-#   ~/.agents/skills
-#   ~/.codex/skills
-#   ~/.config/zed/skills
-#   ~/.hermes/skills
-#   ~/.cursor/skills
-#
-# 只管理本仓库拥有的 skill:按仓库内 <分类>/<skill>/SKILL.md 逐个建立软链。
-# 绝不删除任何目录里其他来源的 skill,也不碰已存在的真实目录。
+# 机制说明:
+#   1. 目标路径是各工具在 macOS/Linux 上的约定配置目录(硬编码)
+#   2. 每个目标配一个"工具检测"条件(命令是否存在 / 应用是否安装)
+#   3. 只对"工具确实存在"的目录建立软链;未检测到的工具跳过并提示
+#   4. 绝不删除任何目录里其他来源的 skill,也不碰已存在的真实目录
 #
 # 用法:
-#   ./scripts/sync.sh            同步到全部 5 个工具
+#   ./scripts/sync.sh            同步到全部已检测到的工具
 #   ./scripts/sync.sh --dry-run  只打印将执行的操作,不做修改
-#   SKILLS_TARGET_DIR=~/xxx ./scripts/sync.sh  只同步到指定目录(单工具)
+#   SKILLS_TARGET_DIR=~/xxx ./scripts/sync.sh  只同步到指定目录(单工具,不做检测)
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -29,13 +23,29 @@ else
   TARGET_DIRS=(
     "$HOME/.config/opencode/skills"
     "$HOME/.claude/skills"
-    "$HOME/.agents/skills"
     "$HOME/.codex/skills"
     "$HOME/.config/zed/skills"
     "$HOME/.hermes/skills"
     "$HOME/.cursor/skills"
+    "$HOME/.agents/skills"
   )
 fi
+
+# 工具检测:目录存在不代表工具装了(可能是残留/新建)。
+# 用"命令存在 或 应用已安装 或 配置目录已存在"判断,
+# 避免在没装工具的电脑上凭空建目录。
+tool_installed() {
+  case "$1" in
+    "$HOME/.config/opencode/skills") command -v opencode >/dev/null 2>&1 || [[ -d "/Applications/OpenCode.app" ]] || [[ -d "$HOME/.config/opencode" ]] ;;
+    "$HOME/.claude/skills")          command -v claude >/dev/null 2>&1 || [[ -d "/Applications/Claude.app" ]] || [[ -d "$HOME/.claude" ]] ;;
+    "$HOME/.codex/skills")           command -v codex >/dev/null 2>&1 || [[ -d "$HOME/.codex" ]] ;;
+    "$HOME/.config/zed/skills")      command -v zed >/dev/null 2>&1 || [[ -d "/Applications/Zed.app" ]] || [[ -d "$HOME/.config/zed" ]] ;;
+    "$HOME/.hermes/skills")          command -v hermes >/dev/null 2>&1 || [[ -d "$HOME/.hermes" ]] ;;
+    "$HOME/.cursor/skills")          command -v cursor >/dev/null 2>&1 || [[ -d "/Applications/Cursor.app" ]] || [[ -d "$HOME/.cursor" ]] ;;
+    "$HOME/.agents/skills")          [[ -d "$HOME/.agents" ]] ;;
+    *)                               return 1 ;;
+  esac
+}
 
 collect_skills() {
   local category_dir skill_dir name
@@ -55,8 +65,14 @@ collect_skills() {
 total_created=0
 total_skipped=0
 total_warned=0
+total_missing=0
 
 for TARGET_DIR in "${TARGET_DIRS[@]}"; do
+  if [[ -z "${SKILLS_TARGET_DIR:-}" ]] && ! tool_installed "$TARGET_DIR"; then
+    echo "[skip] 未检测到对应工具,跳过: $TARGET_DIR"
+    total_missing=$((total_missing + 1))
+    continue
+  fi
   mkdir -p "$TARGET_DIR"
   echo "================ $TARGET_DIR ================"
 
@@ -94,5 +110,5 @@ for TARGET_DIR in "${TARGET_DIRS[@]}"; do
 done
 
 echo "===== 汇总 ====="
-echo "新建/更新: $total_created, 已就位: $total_skipped, 跳过(冲突): $total_warned"
+echo "新建/更新: $total_created, 已就位: $total_skipped, 跳过(冲突): $total_warned, 未检测到工具: $total_missing"
 [[ $DRY_RUN -eq 1 ]] && echo "(dry-run,未做任何修改)"
