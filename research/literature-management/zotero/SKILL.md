@@ -31,3 +31,7 @@ Use the already configured `zotero` MCP server. Do not ask the user to install a
 - Keep Zotero item keys distinct from BibTeX citation keys.
 - For writes, report the created or changed item and verify its destination.
 - If a route fails, state the exact gate: Zotero Desktop unavailable, local API disabled, MCP disconnected, item not found, attachment missing, or write not authorized.
+
+---
+
+*来源:无独立公开仓库;依赖已配置的 zotero-mcp-server 工作。*

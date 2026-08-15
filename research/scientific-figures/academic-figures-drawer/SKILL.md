@@ -133,3 +133,7 @@ SVG/PDF exports may also embed the XML. Report the `.drawio` source, latest prev
 - `scripts/init_figure_workspace.py` — create non-destructive `brief.md`, `visual-spec.md`, `layout-grid.md`, `asset-ledger.md`, and `defect-log.md` scaffolding.
 - `scripts/repair_png.py`, `encode_drawio_url.py`, `shapesearch.py`, `aiicons.py`, `autolayout.py`, `edgeports.py`, and `validate.py` — export repair, browser fallback, shape lookup, optional layout, edge-port distribution, and structural lint.
 - `data/shape-index.json.gz` and `data/lobe-icons.json` — local indexes used by shape and AI-icon lookup scripts.
+
+---
+
+*来源:https://github.com/M1n-n9/academic-figures-drawer (MIT License)。收编为私有副本后不再跟随上游自动更新,升级前请先检查原仓库。*

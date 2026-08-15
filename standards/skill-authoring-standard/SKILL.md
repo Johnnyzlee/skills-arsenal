@@ -121,3 +121,7 @@ DeepSeek Harness 这类开源 skill 体系值得借鉴,但不能照搬(往往绑
   的 SKILL.md,不要只记在脑子里。
 - **定期复盘**:新 skill 上线用两周后,回头检查 description 触发质量、正文是否
   准确反映实际用法。
+
+---
+
+*来源:综合蒸馏自 deepseek-ai/deepseek-harness 的 `.agents/skills` 体系(MIT License),主要参考 dsh-prose-standard、dsh-trim-cot-leakage、dsh-doc-standards、dsh-find-simplifications 的写作纪律与结构思想,本地化为个人可维护版本。*

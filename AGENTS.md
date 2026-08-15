@@ -55,6 +55,16 @@ description: >
 ---
 ```
 
+### 来源记录(强制)
+
+每个 skill 必须可追溯来源,便于日后检查上游更新:
+
+- **蒸馏自外部仓库**:SKILL.md 末尾注明原仓库名、原文件路径、许可证、原文链接(如 `dsh-prose-standard` 的做法)。
+- **直接搬运的外部 skill**:在 SKILL.md frontmatter 加 `metadata.source: <原仓库 URL>`,README 的 skill 一览"原始仓库"列同步登记。
+- **无原仓库**(如官方分发、依赖 MCP):在 README 表格注明"无公开仓库/官方分发",不写编造的链接。
+- **README 维护**:skill 一览表的"原始仓库"列必须与 SKILL.md 来源一致;每次新增/更新 skill 都要核对这一列。
+- **更新检查**:有原仓库的 skill,升级前先访问原仓库确认是否有新版本;蒸馏 skill 在原作者重大更新时评估是否重新吸收。
+
 ### 正文写作纪律(详见 standards/skill-authoring-standard)
 
 - **保留完整命题**:删修饰不删事实;每个事实成分(主体/条件/情态/否定保证/副作用/后果)必须存活。

@@ -157,3 +157,7 @@ Skill 包不携带 CLI 二进制。setup 获得用户授权后，从发布时注
 - 配额或频率限制：停止重复调用，说明受影响能力和服务端错误。
 - 搜索无结果：缩短或改写查询；不要把鉴权失败误报为无结果。
 - 服务端错误或超时：遵循 CLI 返回，不额外重试直答 POST。
+
+---
+
+*来源:知乎官方分发的 Skill(无公开 GitHub 仓库)。版本 0.3.0,通过知乎官方 manifest 更新(`https://developer-cdn.zhihu.com/zhihu-cli/releases/stable/manifest.json`)。*
