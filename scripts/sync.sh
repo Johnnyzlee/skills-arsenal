@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # sync.sh — 把仓库内的 skill 软链到所有支持的工具目录
 #
-# 支持的目标工具(opencode / Claude Code / Codex / Zed / 通用 ~/.agents):
+# 支持的目标工具(opencode / Claude Code / Codex / Zed / Hermes / 通用 ~/.agents):
 #   ~/.config/opencode/skills
 #   ~/.claude/skills
 #   ~/.agents/skills
 #   ~/.codex/skills
 #   ~/.config/zed/skills
+#   ~/.hermes/skills
 #
 # 只管理本仓库拥有的 skill:按仓库内 <分类>/<skill>/SKILL.md 逐个建立软链。
 # 绝不删除任何目录里其他来源的 skill,也不碰已存在的真实目录。
@@ -30,6 +31,7 @@ else
     "$HOME/.agents/skills"
     "$HOME/.codex/skills"
     "$HOME/.config/zed/skills"
+    "$HOME/.hermes/skills"
   )
 fi
 
