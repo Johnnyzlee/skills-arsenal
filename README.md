@@ -80,7 +80,7 @@
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏)</td>
     </tr>
     <tr>
-      <td rowspan="2">coding</td>
+      <td rowspan="5">coding</td>
       <td>—</td>
       <td><a href="coding/prose-standard/SKILL.md">prose-standard</a></td>
       <td>注释/JSDoc/文档写作标准:保留完整命题、按位置分类的必需覆盖</td>
@@ -93,6 +93,27 @@
       <td>清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类</td>
       <td>—</td>
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-trim-cot-leakage</code>)</td>
+    </tr>
+    <tr>
+      <td>—</td>
+      <td><a href="coding/code-review/SKILL.md">code-review</a></td>
+      <td>代码评审规范:阻塞性要求 + 人工检查清单(生命周期/并发/接口契约/边界覆盖等)</td>
+      <td>—</td>
+      <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-code-review</code>)</td>
+    </tr>
+    <tr>
+      <td>—</td>
+      <td><a href="coding/pre-push-checks/SKILL.md">pre-push-checks</a></td>
+      <td>推送前最小检查:按改动类型选最小相关测试,不反射式跑全量</td>
+      <td>—</td>
+      <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-pre-push-checks</code>)</td>
+    </tr>
+    <tr>
+      <td>—</td>
+      <td><a href="coding/find-simplifications/SKILL.md">find-simplifications</a></td>
+      <td>代码简化审计:有证据的删除/折叠提案,消费者分类,驳回弱候选</td>
+      <td>—</td>
+      <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-find-simplifications</code>)</td>
     </tr>
     <tr>
       <td rowspan="2">web-search</td>

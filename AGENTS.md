@@ -21,7 +21,10 @@
 skills-arsenal/
 ├── coding/                          # 编程开发
 │   ├── prose-standard/              #   注释/文档写作标准
-│   └── trim-cot-leakage/            #   思维链残留清理
+│   ├── trim-cot-leakage/            #   思维链残留清理
+│   ├── code-review/                 #   代码评审规范
+│   ├── pre-push-checks/             #   推送前最小检查
+│   └── find-simplifications/        #   代码简化审计
 ├── web-search/                      # 网络检索
 │   ├── agent-reach/                 #   全网调研
 │   └── zhihu/                       #   知乎
