@@ -60,17 +60,17 @@
 
 ## Skill 一览
 
-| 分类 | Skill | 用途 | 原始仓库 | 参考资源 |
-|---|---|---|---|---|
-| standards | [skill-authoring-standard](standards/skill-authoring-standard/SKILL.md) | 编写/维护高质量 skill 的规范:触发词、结构、写作纪律 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏) | — |
-| standards | readme-writing(准备中) | README 写作规范 | — | [GitHub 官方:About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) · [Make a README](https://www.makeareadme.com/) · [standard-readme](https://github.com/RichardLitt/standard-readme) · [Awesome README](https://github.com/matiassingers/awesome-readme) |
-| standards | agents-md-writing(准备中) | AGENTS.md 写作规范 | — | [agents.md 官方规范](https://agents.md/) · [OpenAI 公告](https://openai.com/index/introducing-agents-md/) · [GitHub Copilot 仓库指令](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions) · [Claude Code 文档](https://code.claude.com/docs/en/agent-instructions) · [Zed Skills 文档](https://zed.dev/docs/ai/skills) |
-| coding | [prose-standard](coding/prose-standard/SKILL.md) | 注释/JSDoc/文档写作标准:保留完整命题、按位置分类的必需覆盖 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏自 `dsh-prose-standard`) | — |
-| coding | [trim-cot-leakage](coding/trim-cot-leakage/SKILL.md) | 清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏自 `dsh-trim-cot-leakage`) | — |
-| web-search | [agent-reach](web-search/agent-reach/SKILL.md) | 全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等) | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)(照搬) | — |
-| web-search | [zhihu](web-search/zhihu/SKILL.md) | 知乎搜索/热榜/直答/创作管理 | — | 知乎官方分发([manifest](https://developer-cdn.zhihu.com/zhihu-cli/releases/stable/manifest.json)),本地化自研 |
-| research | [zotero](research/literature-management/zotero/SKILL.md) | Zotero 文献库管理:检索/元数据/全文/注释/引用 | — | [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp)(v0.9.1),基于其工具集自研 |
-| research | [academic-figures-drawer](research/scientific-figures/academic-figures-drawer/SKILL.md) | 科研绘图:论文配图、框架图、流程图(draw.io) | [M1n-n9/academic-figures-drawer](https://github.com/M1n-n9/academic-figures-drawer)(照搬) | — |
+| 分类 | 分类 | Skill | 用途 | 原始仓库 | 参考资源 |
+|---|---|---|---|---|---|
+| standards | — | [skill-authoring-standard](standards/skill-authoring-standard/SKILL.md) | 编写/维护高质量 skill 的规范:触发词、结构、写作纪律 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏) | — |
+|  | — | readme-writing(准备中) | README 写作规范 | — | [GitHub 官方:About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) · [Make a README](https://www.makeareadme.com/) · [standard-readme](https://github.com/RichardLitt/standard-readme) · [Awesome README](https://github.com/matiassingers/awesome-readme) |
+|  | — | agents-md-writing(准备中) | AGENTS.md 写作规范 | — | [agents.md 官方规范](https://agents.md/) · [OpenAI 公告](https://openai.com/index/introducing-agents-md/) · [GitHub Copilot 仓库指令](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions) · [Claude Code 文档](https://code.claude.com/docs/en/agent-instructions) · [Zed Skills 文档](https://zed.dev/docs/ai/skills) |
+| coding | — | [prose-standard](coding/prose-standard/SKILL.md) | 注释/JSDoc/文档写作标准:保留完整命题、按位置分类的必需覆盖 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏自 `dsh-prose-standard`) | — |
+|  | — | [trim-cot-leakage](coding/trim-cot-leakage/SKILL.md) | 清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)(蒸馏自 `dsh-trim-cot-leakage`) | — |
+| web-search | — | [agent-reach](web-search/agent-reach/SKILL.md) | 全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等) | [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)(照搬) | — |
+|  | — | [zhihu](web-search/zhihu/SKILL.md) | 知乎搜索/热榜/直答/创作管理 | — | 知乎官方分发([manifest](https://developer-cdn.zhihu.com/zhihu-cli/releases/stable/manifest.json)),本地化自研 |
+| research | literature-management | [zotero](research/literature-management/zotero/SKILL.md) | Zotero 文献库管理:检索/元数据/全文/注释/引用 | — | [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp)(v0.9.1),基于其工具集自研 |
+|  | scientific-figures | [academic-figures-drawer](research/scientific-figures/academic-figures-drawer/SKILL.md) | 科研绘图:论文配图、框架图、流程图(draw.io) | [M1n-n9/academic-figures-drawer](https://github.com/M1n-n9/academic-figures-drawer)(照搬) | — |
 
 > **更新检查**:有原始仓库的 skill,升级前先看原仓库是否发布了新版本;蒸馏/本地化的 skill 在原作者有重大更新时,决定是否重新吸收(流程见 AGENTS.md)。
 
