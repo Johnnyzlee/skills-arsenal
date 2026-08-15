@@ -45,7 +45,7 @@
   │  │   │   └── zotero/                    ← Zotero 文献管理               │
   │  │   ├── scientific-figures/                                            │
   │  │   │   └── academic-figures-drawer/   ← 科研绘图(draw.io)             │
-  │  │   └── academic-writing/              ← 学术写作(规划中,空分类)       │
+  │  │   └── academic-writing/              ← 学术写作(准备中)               │
   │  │                                                                      │
   │  ├── writing/ · life/                   ← 待扩充分类                    │
   │  ├── scripts/                                                           │
@@ -124,7 +124,7 @@
       <td>知乎官方分发(<a href="https://developer-cdn.zhihu.com/zhihu-cli/releases/stable/manifest.json">manifest</a>)</td>
     </tr>
     <tr>
-      <td rowspan="2">research</td>
+      <td rowspan="3">research</td>
       <td>literature-management</td>
       <td><a href="research/literature-management/zotero/SKILL.md">zotero</a></td>
       <td>Zotero 文献库管理:检索/元数据/全文/注释/引用</td>
@@ -136,6 +136,13 @@
       <td><a href="research/scientific-figures/academic-figures-drawer/SKILL.md">academic-figures-drawer</a></td>
       <td>科研绘图:论文配图、框架图、流程图(draw.io)</td>
       <td><a href="https://github.com/M1n-n9/academic-figures-drawer">M1n-n9/academic-figures-drawer</a></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>academic-writing</td>
+      <td>academic-writing(准备中)</td>
+      <td>学术写作规范</td>
+      <td>—</td>
       <td>—</td>
     </tr>
   </tbody>
