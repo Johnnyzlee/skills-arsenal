@@ -84,14 +84,14 @@
       <td>readme-writing(准备中)</td>
       <td>README 写作规范</td>
       <td>—</td>
-      <td><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">GitHub 官方:About READMEs</a> · <a href="https://www.makeareadme.com/">Make a README</a> · <a href="https://github.com/RichardLitt/standard-readme">standard-readme</a> · <a href="https://github.com/matiassingers/awesome-readme">Awesome README</a></td>
+      <td><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">GitHub 官方:About READMEs</a> · <a href="https://www.makeareadme.com/">Make a README</a> · <a href="https://github.com/RichardLitt/standard-readme">standard-readme</a> · <a href="https://github.com/matiassingers/awesome-readme">Awesome README</a> · <a href="https://github.com/myl7/readme-skill">myl7/readme-skill</a>(现成 skill) · <a href="https://github.com/shimo4228/readme-writer">shimo4228/readme-writer</a>(参考思想)</td>
     </tr>
     <tr>
       <td>—</td>
       <td>agents-md-writing(准备中)</td>
       <td>AGENTS.md 写作规范</td>
       <td>—</td>
-      <td><a href="https://agents.md/">agents.md 官方规范</a> · <a href="https://openai.com/index/introducing-agents-md/">OpenAI 公告</a> · <a href="https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions">GitHub Copilot 仓库指令</a> · <a href="https://code.claude.com/docs/en/agent-instructions">Claude Code 文档</a> · <a href="https://zed.dev/docs/ai/skills">Zed Skills 文档</a></td>
+      <td><a href="https://agents.md/">agents.md 官方规范</a> · <a href="https://openai.com/index/introducing-agents-md/">OpenAI 公告</a> · <a href="https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions">GitHub Copilot 仓库指令</a> · <a href="https://code.claude.com/docs/en/agent-instructions">Claude Code 文档</a> · <a href="https://zed.dev/docs/ai/skills">Zed Skills 文档</a> · <a href="https://github.com/Caph-dev/agents-progressive-disclosure">agents-progressive-disclosure</a>(现成 skill,72⭐)</td>
     </tr>
     <tr>
       <td rowspan="2">coding</td>
