@@ -46,12 +46,27 @@
 ## 快速开始
 
 ```sh
+# 新电脑一条命令装好(克隆 + 建软链)
+curl -fsSL https://raw.githubusercontent.com/Johnnyzlee/skills-arsenal/main/scripts/setup.sh | bash
+
+# 或手动
 git clone https://github.com/Johnnyzlee/skills-arsenal.git
 cd skills-arsenal
 ./scripts/sync.sh          # 建立/更新全部软链
 ./scripts/sync.sh --dry-run  # 只预览不修改
 SKILLS_TARGET_DIR=~/.claude/skills ./scripts/sync.sh  # 只同步单个 Agent
 ```
+
+### 多电脑同步
+
+仓库以 GitHub 为唯一事实源,所有电脑共用同一套 skill:
+
+```sh
+# 在任意电脑上更新到最新
+cd ~/skills-arsenal && git pull --ff-only && ./scripts/sync.sh
+```
+
+一台电脑上新增/修改的 skill,`git push` 后其他电脑 pull 即获得。
 
 ## 目录结构
 

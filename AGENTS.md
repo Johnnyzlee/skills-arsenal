@@ -104,6 +104,35 @@ description: >
 - [ ] `sync.sh` 已运行,各 Agent 软链状态与仓库一致
 - [ ] 新增 skill 已登记到 README 清单
 
+## 多电脑工作流
+
+仓库以 GitHub 为唯一事实源,支持任意台电脑共用同一套 skill。
+
+### 新电脑首次安装
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Johnnyzlee/skills-arsenal/main/scripts/setup.sh | bash
+```
+
+等价于:clone 仓库到 `~/skills-arsenal` → 运行 `scripts/sync.sh` 建立本机软链。
+
+### 日常同步
+
+所有电脑共享同一仓库,任何一台的改动 `git push` 后,其他电脑:
+
+```sh
+cd ~/skills-arsenal && git pull --ff-only && ./scripts/sync.sh
+```
+
+### 多电脑协作规则
+
+- **一台电脑一个视角**:仓库是唯一事实源;新 skill 在哪台电脑上发现,就在那台电脑上加进仓库并 push,其他电脑 pull 即获得。
+- **软链是本机私有的**:软链内容(指向哪些 Agent 目录)由每台电脑的 `sync.sh` 各自建立,不提交、不共享。
+- **电脑间不直接传文件**:只在各电脑与 GitHub 之间 push/pull,避免副本分歧。
+- **pull 前先提交**:改动会冲突;执行 `git pull` 前先 `git status` 确认工作区干净,或先 commit 自己的改动。
+- **冲突处理**:同一 skill 在两台电脑都被修改时,git 会要求解决冲突——保留两边内容合并,不丢弃任何一版(除非用户确认)。
+- **新电脑缺依赖**:某些 skill 依赖本机工具(如 zotero 需要 Zotero 桌面、zhihu 需要对应 CLI)。skill 本体照常同步,依赖缺失时 skill 的正文会说明,不影响其他 skill。
+
 ## Git 提交规范
 
 - **提交信息**:`<type>: <中文或英文摘要>`
