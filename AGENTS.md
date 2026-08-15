@@ -22,13 +22,14 @@ skills-arsenal/
 ├── coding/                          # 编程开发
 │   ├── prose-standard/              #   注释/文档写作标准
 │   └── trim-cot-leakage/            #   思维链残留清理
-├── research/                        # 信息调研
-│   ├── web-search/                  #   网络检索
-│   │   ├── agent-reach/
-│   │   └── zhihu/
+├── web-search/                      # 网络检索
+│   ├── agent-reach/                 #   全网调研
+│   └── zhihu/                       #   知乎
+├── research/                        # 学术研究
 │   ├── literature-management/       #   文献管理
 │   │   └── zotero/
-│   ├── scientific-figures/          #   科研绘图(规划中)
+│   ├── scientific-figures/          #   科研绘图
+│   │   └── academic-figures-drawer/
 │   └── academic-writing/            #   学术写作(规划中)
 ├── standards/                       # 元规范
 │   └── skill-authoring-standard/    #   如何写 skill

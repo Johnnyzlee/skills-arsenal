@@ -36,10 +36,11 @@
   │  │   ├── prose-standard/                ← 注释/文档写作标准             │
   │  │   └── trim-cot-leakage/              ← 思维链残留清理                │
   │  │                                                                      │
-  │  ├── research/                          ← 信息调研                      │
-  │  │   ├── web-search/                                                    │
-  │  │   │   ├── agent-reach/               ← 全网调研(13 平台)             │
-  │  │   │   └── zhihu/                     ← 知乎搜索/热榜/直答            │
+  │  ├── web-search/                        ← 网络检索                      │
+  │  │   ├── agent-reach/                   ← 全网调研(13 平台)             │
+  │  │   └── zhihu/                         ← 知乎搜索/热榜/直答            │
+  │  │                                                                      │
+  │  ├── research/                          ← 学术研究                      │
   │  │   ├── literature-management/                                         │
   │  │   │   └── zotero/                    ← Zotero 文献管理               │
   │  │   ├── scientific-figures/                                            │
@@ -90,18 +91,20 @@
       <td><a href="https://github.com/deepseek-ai/deepseek-harness">deepseek-ai/deepseek-harness</a>(蒸馏自 <code>dsh-trim-cot-leakage</code>)</td>
     </tr>
     <tr>
-      <td rowspan="4">research</td>
       <td rowspan="2">web-search</td>
-      <td><a href="research/web-search/agent-reach/SKILL.md">agent-reach</a></td>
+      <td>—</td>
+      <td><a href="web-search/agent-reach/SKILL.md">agent-reach</a></td>
       <td>全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等)</td>
       <td><a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a></td>
     </tr>
     <tr>
-      <td><a href="research/web-search/zhihu/SKILL.md">zhihu</a></td>
+      <td>—</td>
+      <td><a href="web-search/zhihu/SKILL.md">zhihu</a></td>
       <td>知乎搜索/热榜/直答/创作管理</td>
       <td>知乎官方分发,无公开仓库</td>
     </tr>
     <tr>
+      <td rowspan="3">research</td>
       <td>literature-management</td>
       <td><a href="research/literature-management/zotero/SKILL.md">zotero</a></td>
       <td>Zotero 文献库管理:检索/元数据/全文/注释/引用</td>
@@ -112,6 +115,12 @@
       <td><a href="research/scientific-figures/academic-figures-drawer/SKILL.md">academic-figures-drawer</a></td>
       <td>科研绘图:论文配图、框架图、流程图(draw.io)</td>
       <td><a href="https://github.com/M1n-n9/academic-figures-drawer">M1n-n9/academic-figures-drawer</a></td>
+    </tr>
+    <tr>
+      <td>academic-writing</td>
+      <td>—(规划中)</td>
+      <td>学术写作</td>
+      <td>—</td>
     </tr>
   </tbody>
 </table>
