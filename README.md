@@ -4,47 +4,84 @@
 
 **架构一句话**:仓库是真身,`scripts/sync.sh` 把 skill 软链到所有 Agent。改仓库 = 改全部 7 个 Agent。
 
+## 仓库全景图
+
+```
+                    ┌──────────────────────────────────────────────┐
+                    │            GitHub 仓库(唯一事实源)             │
+                    │     github.com/Johnnyzlee/skills-arsenal      │
+                    └──────────────────────────────────────────────┘
+                                      │ git clone / pull
+                                      ▼
+              ┌──────────────────────────────────────────────────┐
+              │              ~/skills-arsenal(本地真身)          │
+              └──────────────────────────────────────────────────┘
+                                      │ ./scripts/sync.sh(软链)
+                                      ▼
+     ┌─────────┬──────────┬─────────┬────────┬─────────┬────────┬──────────┐
+     ▼         ▼          ▼         ▼        ▼         ▼        ▼          ▼
+  opencode   Claude     Codex      Zed     Hermes   Cursor   ~/.agents   (新 Agent)
+  ~/.config  ~/.claude  ~/.codex   ~/.config ~/.hermes ~/.cursor  ~/.agents  加入列表
+  /opencode  /skills    /skills    /zed     /skills   /skills  /skills    即自动同步
+  /skills                           /skills
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  仓库目录结构                                                            │
+  │                                                                         │
+  │  skills-arsenal/                                                        │
+  │  ├── standards/                         ← 元规范(怎么造 skill)          │
+  │  │   └── skill-authoring-standard/      ← 编写/维护 skill 的规范        │
+  │  │                                                                      │
+  │  ├── coding/                            ← 编程开发                      │
+  │  │   ├── prose-standard/                ← 注释/文档写作标准             │
+  │  │   └── trim-cot-leakage/              ← 思维链残留清理                │
+  │  │                                                                      │
+  │  ├── research/                          ← 信息调研                      │
+  │  │   ├── web-search/                                                    │
+  │  │   │   ├── agent-reach/               ← 全网调研(13 平台)             │
+  │  │   │   └── zhihu/                     ← 知乎搜索/热榜/直答            │
+  │  │   ├── literature-management/                                         │
+  │  │   │   └── zotero/                    ← Zotero 文献管理               │
+  │  │   ├── scientific-figures/                                            │
+  │  │   │   └── academic-figures-drawer/   ← 科研绘图(draw.io)             │
+  │  │   └── academic-writing/              ← 学术写作(规划中,空分类)       │
+  │  │                                                                      │
+  │  ├── writing/ · life/                   ← 待扩充分类                    │
+  │  ├── scripts/                                                           │
+  │  │   ├── sync.sh                        ← 同步:仓库 → 所有 Agent       │
+  │  │   └── setup.sh                       ← 新电脑一键安装                │
+  │  ├── README.md                          ← 本文件(给人看)                │
+  │  └── AGENTS.md                          ← 维护手册(给 Agent 看)         │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  共 7 个 skill,全部软链到 7 个 Agent(检测到已安装的才同步)
+```
+
 ## Skill 一览
 
-### standards — 元规范
-
-| Skill | 用途 |
-|---|---|
-| [skill-authoring-standard](standards/skill-authoring-standard/SKILL.md) | 编写/维护高质量 skill 的规范:触发词、结构、写作纪律 |
-
-### coding — 编程开发
-
-| Skill | 用途 |
-|---|---|
-| [prose-standard](coding/prose-standard/SKILL.md) | 注释/JSDoc/文档写作标准:保留完整命题、按位置分类的必需覆盖 |
-| [trim-cot-leakage](coding/trim-cot-leakage/SKILL.md) | 清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类 |
-
-### research — 信息调研
-
-| Skill | 用途 |
-|---|---|
-| **web-search** | |
-| [agent-reach](research/web-search/agent-reach/SKILL.md) | 全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等) |
-| [zhihu](research/web-search/zhihu/SKILL.md) | 知乎搜索/热榜/直答/创作管理 |
-| **literature-management** | |
-| [zotero](research/literature-management/zotero/SKILL.md) | Zotero 文献库管理:检索/元数据/全文/注释/引用 |
-
-### 规划中的分类
-
-- `research/scientific-figures/` — 科研绘图(学术绘图 skill 暂由 TokenTracker 管理,未入仓库)
-- `research/academic-writing/` — 学术写作
+| 分类 | Skill | 用途 |
+|---|---|---|
+| standards | [skill-authoring-standard](standards/skill-authoring-standard/SKILL.md) | 编写/维护高质量 skill 的规范:触发词、结构、写作纪律 |
+| coding | [prose-standard](coding/prose-standard/SKILL.md) | 注释/JSDoc/文档写作标准:保留完整命题、按位置分类的必需覆盖 |
+| coding | [trim-cot-leakage](coding/trim-cot-leakage/SKILL.md) | 清理"思维链残留"文字:死引用、变更叙述、评审对白等 8 类 |
+| research/web-search | [agent-reach](research/web-search/agent-reach/SKILL.md) | 全网调研:13 平台多后端路由(小红书/推特/B站/Reddit/V2EX/LinkedIn/YouTube/GitHub 等) |
+| research/web-search | [zhihu](research/web-search/zhihu/SKILL.md) | 知乎搜索/热榜/直答/创作管理 |
+| research/literature-management | [zotero](research/literature-management/zotero/SKILL.md) | Zotero 文献库管理:检索/元数据/全文/注释/引用 |
+| research/scientific-figures | [academic-figures-drawer](research/scientific-figures/academic-figures-drawer/SKILL.md) | 科研绘图:论文配图、框架图、流程图(draw.io) |
 
 ## 已同步的 Agent
 
-| Agent | 目录 |
-|---|---|
-| opencode | `~/.config/opencode/skills/` |
-| Claude Code | `~/.claude/skills/` |
-| 通用 agents(`~/.agents`,Zed + opencode 读取) | `~/.agents/skills/` |
-| Codex | `~/.codex/skills/` |
-| Zed | `~/.config/zed/skills/` |
-| Hermes | `~/.hermes/skills/` |
-| Cursor | `~/.cursor/skills/` |
+| Agent | 目录 | 说明 |
+|---|---|---|
+| opencode | `~/.config/opencode/skills/` | |
+| Claude Code | `~/.claude/skills/` | |
+| Codex | `~/.codex/skills/` | |
+| Zed | `~/.config/zed/skills/` | |
+| Hermes | `~/.hermes/skills/` | |
+| Cursor | `~/.cursor/skills/` | |
+| 通用 agents | `~/.agents/skills/` | 跨 agent 目录,Zed + opencode 官方都会读取 |
+
+`sync.sh` 会先检测本机装了哪些 Agent,只对已安装的建立软链;新 Agent 加入列表后自动同步。
 
 ## 快速开始
 
